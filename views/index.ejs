@@ -17,44 +17,29 @@
     </div>
 </div>
 
-<!-- categories start -->
+<!-- Categories Start -->
+
+
 <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
-    <a href="#" class="col text-center category__link">
-        <div class="category__img shadow">
-            <img src="img/steak-intro.jpg" alt="Meat" loading="lazy">
-        </div>
-        <div class="pt-1">Only Meats</div>
-    </a>
-    <a href="#" class="col text-center category__link">
-        <div class="category__img shadow">
-            <img src="img/mexico.jpg" alt="Mexican Food" loading="lazy">
-        </div>
-        <div class="pt-1">Mexican Twist</div>
-    </a>
-    <a href="#" class="col text-center category__link">
-        <div class="category__img shadow">
-            <img src="img/savoury.jpg" alt="Savoury Food" loading="lazy">
-        </div>
-        <div class="pt-1">All Savoury</div>
-    </a>
-    <a href="#" class="col text-center category__link">
-        <div class="category__img shadow">
-            <img src="img/sea-food.jpg" alt="Sea Food" loading="lazy">
-        </div>
-        <div class="pt-1">Sea food</div>
-    </a>
-    <a href="#" class="col text-center category__link">
-        <div class="category__img shadow">
-            <img src="img/sweet.jpg" alt="Sweet Food" loading="lazy">
-        </div>
-        <div class="pt-1">Sweet tooth</div>
-    </a>
+
+    <% if(categories != '') { %>
+      <% categories.forEach(function(category, index) { %>
+        <a href="/categories/<%- category.name %>" class="col text-center category__link">
+          <div class="category__img shadow">
+            <img src="img/<%- category.image %>" alt="<%- category.name %>" loading="lazy">
+          </div>
+          <div class="pt-1"><%- category.name %></div>
+        </a>
+      <% }) %>
+    <% } %>
+    
     <a href="/categories" class="col text-center category__link">
         <div class="category__img shadow">
             <img src="img/drinks.jpg" alt="View All Categories" loading="lazy">
         </div>
         <div class="pt-1">View All</div>
     </a>
+
 </div>
 
 <!-- categories end -->
