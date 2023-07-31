@@ -29,13 +29,18 @@
             <li>
                 <a href="/about" class="nav-link px-2 link-secondary">About</a> 
             </li>
-            <li>
-                <a href="/submit-recipe" class="nav-link px-2 link-secondary">Submit</a> 
-            </li>
-            <li>
-                <a href="/contact" class="nav-link px-2 link-secondary">Contact</a> 
-                <!-- change later for log in -->
-            </li>
+            <% if (user) { %>
+                <li>
+                    <a href="/submit-recipe" class="nav-link px-2 link-secondary">Submit</a> 
+                </li>
+                <li>
+                    <a href="/contact" class="nav-link px-2 link-secondary">Contact</a> 
+                    <a href="/logout" class="nav-link px-2 link-secondary">LOG OUT</a>
+                    <!-- change later for log in -->
+                    <% } else { %>
+                        <a href="/auth/google" class="nav-link px-2 link-secondary">Log In&nbsp;</a>
+                      <% } %>
+                </li>
         </ul>
         <div class="col-md-3 text-end">
             <form method="POST" action="/search">
