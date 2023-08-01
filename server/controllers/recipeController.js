@@ -119,8 +119,9 @@ exports.submitRecipe = async(req, res) => {
       const newRecipe = new Recipe({
         name: req.body.name,
         description: req.body.description,
-        email: req.body.email,
         ingredients: req.body.ingredients,
+        equipment: req.body.equipment,
+        instructions: req.body.instructions,
         category: req.body.category,
         image: newImageName
       });
