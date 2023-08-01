@@ -1,6 +1,9 @@
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
+// const fileUpload = require('express-fileupload');
 const session = require('express-session');
+// const cookieParser = require('cookie-parser');
+// const flash = require('connect-flash');
 const passport = require('passport');
 require('dotenv').config(); // Load all environment variables before using them (session, passport and env)
 
@@ -34,6 +37,6 @@ app.set('view engine', 'ejs');
 const recipeRoutes = require('./server/routes/recipeRoutes.js');
 const indexRoutes = require('./server/routes/index.js');
 app.use('/', indexRoutes);
-app.use('/recipe', recipeRoutes)
+app.use('/', recipeRoutes)
 
 app.listen(port, () => console.log(`Listening to port ${port}`));

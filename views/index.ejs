@@ -19,7 +19,7 @@
 
 <!-- Categories Start -->
 
-
+<% if (user) { %>
 <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
 
     <% if(categories != '') { %>
@@ -59,7 +59,7 @@
             <% food.latest.forEach(function(recipe, index){ %>
                 <a href="/recipe/<%= recipe._id%>" class="col text-center category__link">
             <div class="category__img category__img--large shadow">
-                <img src="img/<%= recipe.image%>" alt="<%= recipe.name%>" loading="lazy">
+                <img src="/uploads/<%= recipe.image%>" alt="<%= recipe.name%>" loading="lazy">
             </div>
             <div class="pt-1"><%= recipe.name%></div>
 
@@ -70,9 +70,19 @@
     </div>
 
 </section>
-
-
+<% } else { %>
+    <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+  <% } %>
 <!-- Latest end -->
+
+
+
+
+
+
+
+
+
 <!-- Submit start -->
 <section class="px-4 py-5 my-5 text-center">
 <img src="/img/add-recipe.jpg" alt="Add recipe" class="d-block mx-auto mb-4 img-fluid" width="300"  loading="lazy">

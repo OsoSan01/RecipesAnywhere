@@ -8,9 +8,17 @@ exports.homepage = async (req, res) => {
     try{
         const limitNumber = 5;
         const categories = await Category.find({}).limit(limitNumber);
-        const latest = await Recipe.find({}).sort({_id: -1}).limit(limitNumber) //this will show the latest added recipes on the home page
+        const latest = await Recipe.find({}).sort({_id: -1}).limit(limitNumber) //this will show the latest added recipes on the home page with a limit of 5
+        //the following ones const will wrap each category to be finded by id and limit the result to 5 elements
+        const onlyMeats = await Recipe.find({'category': 'Only-Meats'}).limit(limitNumber); 
+        const mexican = await Recipe.find({'category': 'Mexican-Touch'}).limit(limitNumber);
+        const veggies = await Recipe.find({'category': 'Only-Veggies'}).limit(limitNumber);
+        const seafood = await Recipe.find({'category': 'Seafood'}).limit(limitNumber);
+        const sweet = await Recipe.find({'category': 'Sweets'}).limit(limitNumber);
+        const spanish = await Recipe.find({'category': 'Spanish'}).limit(limitNumber);
 
-        const food = {latest};
+        //this whole const of food can be reused to check all categories
+        const food = {latest, onlyMeats, mexican, veggies, seafood, sweet, spanish};
 
         res.render('index', {title: 'Hungry Bear - Homepage', categories, food}); //this is how to pass the title and categories object into the template
     } catch (error) {
@@ -19,15 +27,59 @@ exports.homepage = async (req, res) => {
 }
 
 // get /categories//
-exports.exploreCategories = async (req, res) => {  
-    try{
-        const limitNumber = 20;
-        const categories = await Category.find({}).limit(limitNumber);
-        res.render('categories', {title: 'Hungry Bear - Categories', categories}); //this is how to pass the title and categories object into the template
+exports.exploreCategories = async(req, res) => {
+    try {
+      const limitNumber = 20;
+      const categories = await Category.find({}).limit(limitNumber);
+      res.render('categories', { title: 'Hungry Bear - Categories', categories } );
     } catch (error) {
-        res.status(500).send({message: error.message || "Error Ocurred"});
+      res.satus(500).send({message: error.message || "Error Occured" });
     }
-}
+  } 
+
+// GET recipe from ID//
+//recipe/:id
+
+exports.exploreRecipe = async(req, res) => {
+    try {
+        let recipeId = req.params.id;
+        const recipe = await Recipe.findById(recipeId);
+        res.render('recipe', { title: 'Hungry bear - Recipe', recipe } );
+        } catch (error) {
+        res.satus(500).send({message: error.message || "Error Occured" });
+        }
+  } 
+
+
+// GET category from ID//
+//categories/:id
+
+exports.exploreCategoriesById = async(req, res) => {
+    try {
+        let categoryId = req.params.id;
+        const limitNumber = 20;
+        // this will look for each recipe on a certain category and show them
+        const categoryById = await Recipe.find({ 'category': categoryId}).limit(limitNumber);
+        res.render('categories', { title: 'Hungry bear - Categories', categoryById } );
+        } catch (error) {
+        res.satus(500).send({message: error.message || "Error Occured" });
+        }
+  } 
+
+
+  //POST search for a recipe by name/id
+  // /search
+  exports.searchRecipe = async(req, res) => {
+    try {
+      let searchTerm = req.body.searchTerm;
+      let recipe = await Recipe.find( { $text: { $search: searchTerm, $diacriticSensitive: true } });
+      res.render('search', { title: 'Hungry bear - Search', recipe } );
+    } catch (error) {
+      res.status(500).send({message: error.message || "Error Occured" });
+    }
+  }
+
+
 
 
 // async function addRecipeData(){ //funciton to add the recipe model into mongoose in the first place
@@ -62,7 +114,7 @@ exports.exploreCategories = async (req, res) => {
 //                 "Mix the veggies with the fish, keep it in the fridge but give it a quick mix from time to time. Will be ready to eat in about 15 min.",
 //                 "When ready to serve, add some chopped coriander and mix again, plate it an have some crackers with it."
 //             ],
-//             "category": "Sea Food", 
+//             "category": "Seafood", 
 //             "image": "ceviche.jpg"
 //           },
 //           { 
@@ -107,7 +159,7 @@ exports.exploreCategories = async (req, res) => {
 //                 "Strain, dry and cut in halves the sprouts, cook them for aroun 5-6 min inside the liquid.",
 //                 "Slice the breast, can be served with rice, some pure or on ramen.",
 //             ],
-//             "category": "Only Meats", 
+//             "category": "Only-Meats", 
 //             "image": "braised-duck.jpg"
 //           },
 //         ]);

@@ -23,7 +23,7 @@ const recipeSchema = new mongoose.Schema({
   },
   category: {
     type: String,
-    enum: ['Only Meats', 'Mexican Touch', 'Only Veggies', 'Sea Food', 'Sweet Tooth', 'Spanish'],
+    enum: ['Only-Meats', 'Mexican-Touch', 'Only-Veggies', 'Seafood', 'Sweets', 'Spanish'],
     required: 'This field is required.'
   },
   image: {
@@ -32,4 +32,8 @@ const recipeSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('Recipe', recipeSchema)
+recipeSchema.index({ name: 'text', description: 'text' });
+// WildCard Indexing
+//recipeSchema.index({ "$**" : 'text' });
+
+module.exports = mongoose.model('Recipe', recipeSchema);

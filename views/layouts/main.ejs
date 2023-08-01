@@ -36,17 +36,16 @@
                 <li>
                     <a href="/contact" class="nav-link px-2 link-secondary">Contact</a> 
                     <a href="/logout" class="nav-link px-2 link-secondary">LOG OUT</a>
-                    <!-- change later for log in -->
-                    <% } else { %>
-                        <a href="/auth/google" class="nav-link px-2 link-secondary">Log In&nbsp;</a>
-                      <% } %>
                 </li>
         </ul>
         <div class="col-md-3 text-end">
             <form method="POST" action="/search">
-                <input type="search" name="searchTerm" class="form-control" placeholder="Search..." aria-label="Search">
+              <input type="search" name="searchTerm" class="form-control" placeholder="Search..." aria-label="Search">
             </form>
-        </div>
+          </div>
+          <% } else { %>
+            <a href="/auth/google" class="nav-link px-2 link-secondary">Log In&nbsp;</a>
+          <% } %>
     </header>
 
 <main>
