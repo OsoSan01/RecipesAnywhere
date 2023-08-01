@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const recipeController = require('../controllers/recipeController');
+// const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 // app routes
 
@@ -10,4 +11,9 @@ router.get('/recipe/:id', recipeController.exploreRecipe ); //route for each rec
 router.get('/categories/:id', recipeController.exploreCategoriesById ); //route to explore categories by actual type of category
 //check later why the hell is not doing the search thing
 router.post('/search', recipeController.searchRecipe); // route to search for any given recipe
+router.get('/submit-recipe', recipeController.submitRecipe);
+router.post('/submit-recipe', recipeController.submitRecipeOnPost);
+
+// router.post('/explore-random', recipeController.showRandom ); come back later to add api of random recipe
+
 module.exports = router;
