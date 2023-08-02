@@ -14,6 +14,11 @@ router.post('/search', recipeController.searchRecipe); // route to search for an
 router.get('/submit-recipe', recipeController.submitRecipe);
 router.post('/submit-recipe', recipeController.submitRecipeOnPost);
 
+router.delete('/recipe/:id', recipeController.deleteRecipeById);
+
+router.get('/update-recipe/:id', recipeController.renderUpdateRecipePage);
+router.post('/recipe/:id', recipeController.updateRecipeById);
+
 // router.post('/explore-random', recipeController.showRandom ); come back later to add api of random recipe
 
 module.exports = router;

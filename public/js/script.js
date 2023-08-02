@@ -20,3 +20,6 @@ addEquipmentBtn.addEventListener('click', function() {
     input.value = '';
     equipmentList.appendChild(newIngredients);
 })
+
+
+

@@ -5,6 +5,7 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
 const passport = require('passport');
+const methodOverride = require('method-override');
 require('dotenv').config(); // Load all environment variables before using them (session, passport and env)
 
 const app = express(); // Initialize the express app before using it
@@ -30,6 +31,7 @@ require('./config/passport');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public')); //don't need to list the whole path for any request
 app.use(expressLayouts);
+app.use(methodOverride('_method'));
 
 app.use(cookieParser('CookingBlogSecure'));
 app.use(session({
