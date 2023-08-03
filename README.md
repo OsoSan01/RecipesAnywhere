@@ -20,20 +20,20 @@ A bit more complex than the previous unit. However, a bit more interesting from 
 
 ## Tools
 
--Node.js
-    -I used express at the start. However, I decided to start a new project without the express structure
+    -Node.js
+        -I used express at the start. However, I decided to start a new project without the express structure
 
--MongoDB/Mongoose:
-    -For managing the data base and schemas.
+    -MongoDB/Mongoose:
+        -For managing the data base and schemas.
 
- -CSS
-    -Used mainly bootstrap but added some aditional CSS to make it look better
+    -CSS
+        -Used mainly bootstrap but added some aditional CSS to make it look better
 
- -JS
-    -Only added this to handle the buttons to add elements on a list (more user friendly)
+    -JS
+        -Only added this to handle the buttons to add elements on a list (more user friendly)
 
--Oauth  from Google
-    -Authentication to let a user have their own data.
+    -Oauth  from Google
+        -Authentication to let a user have their own data.
 
 
 ## Over view of the app
@@ -60,11 +60,11 @@ This time I didn't write pseudocode. Instead, I wrote and drew the different pat
 
 Also, I wrote down some user stories. The same stories guided the app's functionality, what was meant to be rendered every time and how the database would handle the inputs/schemas:
 
- -I want to be able to create a recipe, add a picture and give it a category.
- -I want to see all the information and the picture of a recipe.
- -I want to have displayed the last five recipes I created.
- -I want to be able to update my existing recipe, with the previously input information there to be updated.
- -I want to be able to delete one of the recipes.
+    -I want to be able to create a recipe, add a picture and give it a category.
+    -I want to see all the information and the picture of a recipe.
+    -I want to have displayed the last five recipes I created.
+    -I want to be able to update my existing recipe, with the previously input information there to be updated.
+    -I want to be able to delete one of the recipes.
 
 
 So, with all of that in mind and working...
@@ -77,16 +77,16 @@ Happy cooking!
 
 Within the project, I encountered many troubles (mainly because of me):
 
-First one:
-	I kept forgetting to install, require and mount the necessary elements/frameworks (like multer from Cloudify or dotenv). 
-Second:
-	I need to remember to export the required elements.
-Third:
-	There are many moving parts in the back end, so more care is needed in how everything is connected.
-Fourth:
-	I couldn't make Cloudify work. As for now, the user can upload a picture of a recipe. That picture will be saved on the local computer.
-Fifth:
-	I tried to have an API giving random recipes. However, I need more study and understanding of how they work and how to implement them on a project.
+    -First one:
+	    -I kept forgetting to install, require and mount the necessary elements/frameworks (like multer from Cloudify or dotenv). 
+    -Second:
+	    -I need to remember to export the required elements.
+    -Third:
+	    -There are many moving parts in the back end, so more care is needed in how everything is connected.
+    -Fourth:
+	    -I couldn't make Cloudify work. As for now, the user can upload a picture of a recipe. That picture will be saved on the local computer.
+    -Fifth:
+	    -I tried to have an API giving random recipes. However, I need more study and understanding of how they work and how to implement them on a project.
 
 
 
