@@ -1,5 +1,5 @@
 require('../../config/database')
-const { model } = require('mongoose');
+// const { model } = require('mongoose');
 const Category = require('../models/Category');
 const Recipe = require('../models/Recipe');
 
@@ -42,15 +42,15 @@ const exploreCategories = async(req, res) => {
 // GET recipe from ID//
 //recipe/:id
 
-const exploreRecipe = async(req, res) => {
+const exploreRecipe = async (req, res) => {
     try {
-        let recipeId = req.params.id;
-        const recipe = await Recipe.findById(recipeId);
-        res.render('recipe', { title: 'Hungry bear - Recipe', recipe } );
-        } catch (error) {
-        res.satus(500).send({message: error.message || "Error Occured" });
-        }
-  } 
+      let recipeId = req.params.id;
+      const recipe = await Recipe.findById(recipeId);
+      res.render('recipe', { title: 'Hungry bear - Recipe', recipe });
+    } catch (error) {
+      res.status(500).send({ message: error.message || "Error Occured" });
+    }
+  }
 
 
 // GET category from ID//
@@ -138,16 +138,12 @@ const submitRecipe = async(req, res) => {
     }
   }
   
- 
-
-  
+    
   async function deleteRecipeById(req, res) {
     try {
       const recipeId = req.params.id;
-  
       // Find the recipe by ID and delete it
       const deletedRecipe = await Recipe.findByIdAndDelete(recipeId);
-  
       if (deletedRecipe) {
         console.log('Recipe deleted successfully:', deletedRecipe);
         res.redirect('/categories'); // Redirect to a page after successful deletion
@@ -161,29 +157,12 @@ const submitRecipe = async(req, res) => {
     }
   }
 
-
-
-module.exports = {
-    homepage,
-    exploreCategories,
-    exploreRecipe,
-    exploreCategoriesById,
-    searchRecipe,
-    submitRecipe,
-    submitRecipeOnPost,
-    deleteRecipeById,
-    renderUpdateRecipePage,
-    updateRecipeById
-}
-
-
+//render the update recipe page
 async function renderUpdateRecipePage(req, res) {
     try {
       const recipeId = req.params.id;
-  
       // Find the recipe by ID
       const recipe = await Recipe.findById(recipeId);
-  
       if (recipe) {
         res.render('updateRecipe', { title: 'Update Recipe', recipe });
       } else {
@@ -196,10 +175,10 @@ async function renderUpdateRecipePage(req, res) {
     }
   }
 
+  //allows to update and post the new updated recipe
 async function updateRecipeById(req, res) {
     try {
       const recipeId = req.params.id;
-  
       // Find the recipe by ID and update its properties
       const updatedRecipe = await Recipe.findByIdAndUpdate(
         recipeId,
@@ -213,7 +192,6 @@ async function updateRecipeById(req, res) {
         },
         { new: true } // Set { new: true } to return the updated document
       );
-  
       if (updatedRecipe) {
         console.log('Recipe updated successfully:', updatedRecipe);
         res.redirect(`/recipe/${recipeId}`); // Redirect to the updated recipe page
@@ -227,3 +205,16 @@ async function updateRecipeById(req, res) {
     }
   }
   
+
+  module.exports = {
+    homepage,
+    exploreCategories,
+    exploreRecipe,
+    exploreCategoriesById,
+    searchRecipe,
+    submitRecipe,
+    submitRecipeOnPost,
+    deleteRecipeById,
+    renderUpdateRecipePage,
+    updateRecipeById
+}
