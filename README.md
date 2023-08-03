@@ -19,20 +19,21 @@ A bit more complex than the previous unit. However, a bit more interesting from 
     -Have fun doing a project that is relatable or interesting for me.
 
 ## Tools
-*Node.js
-    *I used express at the start. However, I decided to start a new project without the express structure
 
-*MongoDB/Mongoose:
-    *For managing the data base and schemas.
+-Node.js
+    -I used express at the start. However, I decided to start a new project without the express structure
 
- *CSS
-     *Used mainly bootstrap but added some aditional CSS to make it look better
+-MongoDB/Mongoose:
+    -For managing the data base and schemas.
 
- *JS
-    *Only added this to handle the buttons to add elements on a list (more user friendly)
+ -CSS
+    -Used mainly bootstrap but added some aditional CSS to make it look better
 
-*Oauth  from Google
-    *Authentication to let a user have their own data.
+ -JS
+    -Only added this to handle the buttons to add elements on a list (more user friendly)
+
+-Oauth  from Google
+    -Authentication to let a user have their own data.
 
 
 ## Over view of the app
@@ -57,17 +58,13 @@ The user can submit a new recipe or delete or update an existing one.
 
 This time I didn't write pseudocode. Instead, I wrote and drew the different paths and connections that (in my mind) the page needed to have. (Some of them changed in the end).
 
-Also, I wrote down some user stories. The same stories guided the app's functionality, what was meant to be rendered every time and how the database would handle the inputs/schemas
+Also, I wrote down some user stories. The same stories guided the app's functionality, what was meant to be rendered every time and how the database would handle the inputs/schemas:
 
- *I want to be able to create a recipe, add a picture and give it a category.
-
- *I want to see all the information and the picture of a recipe
-
- *I want to have displayed the last five recipes I created
-
- *I want to be able to update my existing recipe, with the previously input information there to be updated.
-
- *I want to be able to delete one of the recipes
+ -I want to be able to create a recipe, add a picture and give it a category.
+ -I want to see all the information and the picture of a recipe.
+ -I want to have displayed the last five recipes I created.
+ -I want to be able to update my existing recipe, with the previously input information there to be updated.
+ -I want to be able to delete one of the recipes.
 
 
 So, with all of that in mind and working...
@@ -110,11 +107,11 @@ What I liked:
 
 What will I improve:
 
-    *Will continue working with this project as is part of something else I have in mind. 
-    *For that, the connection with cloudify is a must. That will be fixed later on.
-    *Also I will try to deploy it using Cyclic or Render.
-    *Will add some API
-    *Improve the UI
+    -Will continue working with this project as is part of something else I have in mind. 
+    -For that, the connection with cloudify is a must. That will be fixed later on.
+    -Also I will try to deploy it using Cyclic or Render.
+    -Will add some API
+    -Improve the UI
 
 
 
