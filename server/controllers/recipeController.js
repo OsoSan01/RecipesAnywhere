@@ -54,7 +54,7 @@ const exploreRecipe = async (req, res) => {
 
 
 // GET category from ID//
-//categories/:id
+//render the categories/:id
 
 const exploreCategoriesById = async(req, res) => {
     try {
@@ -81,21 +81,21 @@ const exploreCategoriesById = async(req, res) => {
     }
   }
 
-  /**
- * GET /submit-recipe
- * Submit Recipe
-*/
+ 
+ //GET /submit-recipe
+ //renders the Submit Recipe page
+
 const submitRecipe = async(req, res) => {
     const infoErrorsObj = req.flash('infoErrors');
     const infoSubmitObj = req.flash('infoSubmit');
     res.render('submit-recipe', { title: 'Cooking Blog - Submit Recipe', infoErrorsObj, infoSubmitObj  } );
   }
   
-  /**
-   * POST /submit-recipe
-   * Submit Recipe
-  */
-  const submitRecipeOnPost = async(req, res) => {
+  
+//POST /submit-recipe
+//Submit Recipe after completing the form//
+
+const submitRecipeOnPost = async(req, res) => {
     try {
   
       let imageUploadFile;
@@ -138,8 +138,11 @@ const submitRecipe = async(req, res) => {
     }
   }
   
-    
-  async function deleteRecipeById(req, res) {
+
+//DELETE /delete recipe
+//delete the showing recipe based on its id//
+
+async function deleteRecipeById(req, res) {
     try {
       const recipeId = req.params.id;
       // Find the recipe by ID and delete it
@@ -175,7 +178,8 @@ async function renderUpdateRecipePage(req, res) {
     }
   }
 
-  //allows to update and post the new updated recipe
+  
+//allows to update and post the new updated recipe
 async function updateRecipeById(req, res) {
     try {
       const recipeId = req.params.id;
@@ -206,6 +210,7 @@ async function updateRecipeById(req, res) {
   }
   
 
+  
   module.exports = {
     homepage,
     exploreCategories,

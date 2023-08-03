@@ -1,4 +1,5 @@
-// here is to add more elements into ingredientes and equipment
+// event handler for the ingredients, equiptment and instructions buttons.
+//They alound to add one more element on the screen
 let addIngredientsBtn = document.getElementById('addIngredientsBtn');
 let ingredientList = document.querySelector('.ingredientList');
 let ingredeintDiv = document.querySelectorAll('.ingredeintDiv')[0];
