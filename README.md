@@ -1,33 +1,5 @@
 # Recipes everywhere project 2
 
-# My app
-[Recipes Anywhere](https://github.com/OsoSan01/RecipesAnywhere)
-
-## Goals
-	-Having an MVP by the end of the week.
-    -Manage to have a full operating web app with CRUD functions.
-    -Have fun doing a project that is relatable or interesting for me.
-
-## Tools
-	-Node.js
-    -I used express at the start. However, I decided to start a new project without the express structure
-    -MongoDB/Mongoose:
-        -For managing the data base and schemas.
-    -CSS
-        -Used mainly bootstrap but added some aditional CSS to make it look better
-    -JS
-        -Only added this to handle the buttons to add elements on a list (more user friendly)
-    -Oauth  from Google
-        -Authentication to let a user have their own data.
-
-
-## Over view of the app
-![Home page](HomePage.png)
-![Logged ](loggedIn.png)
-![Categories/Submit](submitFunction.png)
-![Recipe ](recipeShowing.png)
-
-
 # Intro
 Unit two, project two.
 
@@ -35,6 +7,34 @@ We are reviewing the back end and CRUD functions. We were asked to have a simple
 
 A bit more complex than the previous unit. However, a bit more interesting from my perspective.
 
+
+
+# My app
+[Recipes Anywhere](https://github.com/OsoSan01/RecipesAnywhere)
+
+## Goals
+-Having an MVP by the end of the week.
+-Manage to have a full operating web app with CRUD functions.
+ -Have fun doing a project that is relatable or interesting for me.
+
+## Tools
+-Node.js
+ -I used express at the start. However, I decided to start a new project without the express structure
+ -MongoDB/Mongoose:
+    -For managing the data base and schemas.
+ -CSS
+     -Used mainly bootstrap but added some aditional CSS to make it look better
+ -JS
+    -Only added this to handle the buttons to add elements on a list (more user friendly)
+-Oauth  from Google
+     -Authentication to let a user have their own data.
+
+
+## Over view of the app
+![Home page](HomePage.png)
+![Logged ](loggedIn.png)
+![Categories/Submit](submitFunction.png)
+![Recipe ](recipeShowing.png)
 
 
 
@@ -84,18 +84,27 @@ Fifth:
 
 
 
-# Conclusion. 
-## What I liked, what I hated.
+
+## What I liked, what I hated, what's next
 
 Overall, I'm quite happy with the result.
 
 What I hated:
 
--If I am not careful enough or plan correctly the paths, nothing will work.
+    -If I am not careful enough or plan correctly the paths, nothing will work.
 
 
 What I liked:
     -Really enjoyed the back end perspective.
 
 
-# Thanks
+What will I improve:
+    -Will continue working with this project as is part of something else I have in mind. 
+    -For that, the connection with cloudify is a must. That will be fixed later on.
+    -Also I will try to deploy it using Cyclic or Render.
+    -Will add some API
+    -Improve the UI
+
+
+
+# Thanks and see you next unit!
