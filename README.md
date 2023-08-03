@@ -13,21 +13,26 @@ A bit more complex than the previous unit. However, a bit more interesting from 
 [Recipes Anywhere](https://github.com/OsoSan01/RecipesAnywhere)
 
 ## Goals
--Having an MVP by the end of the week.
--Manage to have a full operating web app with CRUD functions.
- -Have fun doing a project that is relatable or interesting for me.
+
+    -Having an MVP by the end of the week.
+    -Manage to have a full operating web app with CRUD functions.
+    -Have fun doing a project that is relatable or interesting for me.
 
 ## Tools
--Node.js
- -I used express at the start. However, I decided to start a new project without the express structure
- -MongoDB/Mongoose:
-    -For managing the data base and schemas.
- -CSS
-     -Used mainly bootstrap but added some aditional CSS to make it look better
- -JS
-    -Only added this to handle the buttons to add elements on a list (more user friendly)
--Oauth  from Google
-     -Authentication to let a user have their own data.
+*Node.js
+    *I used express at the start. However, I decided to start a new project without the express structure
+
+*MongoDB/Mongoose:
+    *For managing the data base and schemas.
+
+ *CSS
+     *Used mainly bootstrap but added some aditional CSS to make it look better
+
+ *JS
+    *Only added this to handle the buttons to add elements on a list (more user friendly)
+
+*Oauth  from Google
+    *Authentication to let a user have their own data.
 
 
 ## Over view of the app
@@ -54,11 +59,15 @@ This time I didn't write pseudocode. Instead, I wrote and drew the different pat
 
 Also, I wrote down some user stories. The same stories guided the app's functionality, what was meant to be rendered every time and how the database would handle the inputs/schemas
 
- -I want to be able to create a recipe, add a picture and give it a category.
- -I want to see all the information and the picture of a recipe
- -I want to have displayed the last five recipes I created
- -I want to be able to update my existing recipe, with the previously input information there to be updated.
- -I want to be able to delete one of the recipes
+ *I want to be able to create a recipe, add a picture and give it a category.
+
+ *I want to see all the information and the picture of a recipe
+
+ *I want to have displayed the last five recipes I created
+
+ *I want to be able to update my existing recipe, with the previously input information there to be updated.
+
+ *I want to be able to delete one of the recipes
 
 
 So, with all of that in mind and working...
@@ -95,15 +104,17 @@ What I hated:
 
 
 What I liked:
+
     -Really enjoyed the back end perspective.
 
 
 What will I improve:
-    -Will continue working with this project as is part of something else I have in mind. 
-    -For that, the connection with cloudify is a must. That will be fixed later on.
-    -Also I will try to deploy it using Cyclic or Render.
-    -Will add some API
-    -Improve the UI
+
+    *Will continue working with this project as is part of something else I have in mind. 
+    *For that, the connection with cloudify is a must. That will be fixed later on.
+    *Also I will try to deploy it using Cyclic or Render.
+    *Will add some API
+    *Improve the UI
 
 
 
